@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-loader
+  namespace: bd-lab-8
+spec:
+  containers:
+    - name: data-loader
+      image: busybox:1.36
+      command: ["sh", "-c", "sleep 3600"]
+      volumeMounts:
+        - name: spark-storage
+          mountPath: /data
+
+  volumes:
+    - name: spark-storage
+      persistentVolumeClaim:
+        claimName: spark-data
