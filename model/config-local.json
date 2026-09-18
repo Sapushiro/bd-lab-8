@@ -1,0 +1,33 @@
+{
+  "data": {
+    "input_path": "data/raw/food.parquet",
+    "output_path": "data/mart/model_input.parquet",
+    "max_rows": 100000
+  },
+
+  "cassandra": {
+    "keyspace": "openfoodfacts",
+    "source_table": "product_raw",
+    "result_table": "product_clusters"
+  },
+
+  "model": {
+    "output_path": "models/openfoodfacts_kmeans",
+    "metrics_path": "artifacts/kmeans_metrics.json",
+    "predictions_path": "data/mart/model_output.parquet",
+
+    "min_k": 2,
+    "max_k": 8,
+    "seed": 42,
+    "max_iter": 50,
+    "tolerance": 0.0001
+  },
+
+  "features": [
+    "energy_kcal",
+    "fat",
+    "carbohydrates",
+    "proteins",
+    "sugars"
+  ]
+}
