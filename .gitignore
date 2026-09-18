@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Scala / SBT
+target/
+project/target/
+project/project/
+
+# Spark
+.sparkStaging/
+metastore_db/
+derby.log
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+
+# Data
+data/
+*.parquet
+
+# ML artifacts
+models/
+artifacts/
